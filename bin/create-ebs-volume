@@ -162,7 +162,7 @@ function create_and_attach_volume() {
     local region=${availability_zone%?}
 
     local instance_tags=""
-    # Render instance tags to match: --tag-specification
+    # Render instance tags to match: --tag-specifications
     # Output Example:
     # {Key=Name,Value=Jenkins},{Key=Owner,Value=DevOps}
     instance_tags=$(
@@ -270,7 +270,7 @@ function create_and_attach_volume() {
               --region $region \
               --availability-zone $availability_zone \
               $volume_opts \
-              --tag-specification "$tag_specification" \
+              --tag-specifications "$tag_specification" \
           2> $tmpfile
       )
 
